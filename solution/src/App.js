@@ -11,6 +11,7 @@ function App() {
       <h1>TODO APP</h1>
       <TodoForm />
       <Filter />
+      <hr />
       <TodoList />
 
     </div>
