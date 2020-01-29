@@ -12,14 +12,16 @@ export default function TodoForm() {
     const handleForm = e => {
         e.preventDefault()
 
-        const newTodo = {
-            id: todoId,
-            text: todo,
-            completed: false
+        if (todo) {
+            const newTodo = {
+                id: todoId,
+                text: todo,
+                completed: false
+            }
+            dispatch(addTodo(newTodo))
+            dispatch(incrementNextTodoId())
+            setTodo('')
         }
-        dispatch(addTodo(newTodo))
-        dispatch(incrementNextTodoId())
-        setTodo('')
     }
 
     return (

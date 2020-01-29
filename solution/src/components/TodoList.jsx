@@ -5,13 +5,20 @@ import { toggleTodoState } from '../store/actions';
 
 export default function TodoList() {
     const allTodos = Object.values(useSelector(state => state.todos))
-    console.log(allTodos)
     const dispatch = useDispatch()
+
+    const filter = useSelector(state => state.visibilityFilter)
+    let todoList = allTodos
+    if (filter === 'active') {
+        todoList = allTodos.filter(todo => !todo.completed)
+    } else if (filter === 'completed') {
+        todoList = allTodos.filter(todo => todo.completed)
+    }
 
     return (
         <div>
             <ul>
-                {allTodos.map(todo => 
+                {todoList.map(todo => 
                     <li 
                         key={todo.id} 
                         style={todo.completed ? {textDecoration: 'line-through'} : {fontWeight: 'bold'}} 
