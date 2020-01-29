@@ -1,8 +1,5 @@
 # Pursuit-Core-Web-Redux-Lab-Two
 
-## App
-![ReduxToDos](./ReduxToDos.gif)
-
 
 ### Specification
 Build a todo app using Redux. This app does not require a Back-end to persist the data the redux store is enough for now. 
