@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toggleTodoState } from '../store/actions'
+import { toggleTodoState } from '../store/actions';
 
 export default function TodoList() {
     const allTodos = Object.values(useSelector(state => state.todos))
