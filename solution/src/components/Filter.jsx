@@ -9,7 +9,7 @@ export default function Filter(props) {
 
     const handleFilter = event => {
         const filter = event.target.value
-        if (filter === '' || filter === 'active' || filter === 'completed') {
+        if (filter === 'all' || filter === 'active' || filter === 'completed') {
             dispatch(applyFilter(filter))
         }
     }
@@ -18,7 +18,7 @@ export default function Filter(props) {
         <div onChange={handleFilter}>
             <span>Show: </span>
             <label>
-                <input type="radio" name="status" value="" checked={currentFilter === ''}/> All
+                <input type="radio" name="status" value="all" checked={currentFilter === 'all'}/> All
             </label>
             <label>
                 <input type="radio" name="status" value="active" checked={currentFilter === 'active'}/> Active

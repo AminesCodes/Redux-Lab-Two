@@ -6,7 +6,6 @@ const todosReducer = (state = {}, action) => {
             break;
 
         case 'TOGGLE_TODO_STATE':
-            console.log(newState)
             newState[action.targetTodoId].completed = !state[action.targetTodoId].completed
             break;
 
