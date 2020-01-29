@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { toggleTodoState } from '../store/actions'
 
-export default function TodoList(props) {
+export default function TodoList() {
     const allTodos = Object.values(useSelector(state => state.todos))
-    console.log(props)
+    console.log(allTodos)
     const dispatch = useDispatch()
 
     return (
@@ -14,8 +14,8 @@ export default function TodoList(props) {
                 {allTodos.map(todo => 
                     <li 
                         key={todo.id} 
-                        style={todo.completed ? {textDecoration: 'line-through'} : {}} 
-                        onClick={() => dispatch(toggleTodoState())}
+                        style={todo.completed ? {textDecoration: 'line-through'} : {fontWeight: 'bold'}} 
+                        onClick={() => dispatch(toggleTodoState(todo.id))}
                     >
                         {todo.text}
                     </li>)}

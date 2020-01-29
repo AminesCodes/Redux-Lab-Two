@@ -11,9 +11,10 @@ export const addTodo = (todo) => {
     }
 }
 
-export const toggleTodoState = () => {
+export const toggleTodoState = (id) => {
     return {
-        type: 'TOGGLE_TODO_STATE'
+        type: 'TOGGLE_TODO_STATE',
+        targetTodoId: id
     }
 }
 
